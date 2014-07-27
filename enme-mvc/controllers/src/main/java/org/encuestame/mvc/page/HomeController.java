@@ -176,8 +176,19 @@ public class HomeController extends AbstractViewController {
      * @return template
      */
     @RequestMapping(value = "/user/help", method = RequestMethod.GET)
-    public String dashBoardController(ModelMap model, UserAccount account) {
+    public String helpController(ModelMap model, UserAccount account) {
         return "user/help";
+    }
+
+    /**
+     *
+     * @param model
+     * @param account
+     * @return
+     */
+    @RequestMapping(value = "/map", method = RequestMethod.GET)
+    public String map(ModelMap model, UserAccount account) {
+        return "map";
     }
 
     /**
@@ -196,13 +207,13 @@ public class HomeController extends AbstractViewController {
             @PathVariable String slug,
             HttpServletRequest request,
             HttpServletResponse response) {
-    		try {
-				model.put("question", getSearchService().getQuestionInfo(Long.valueOf(id)));
-			} catch (EnMeNoResultsFoundException | NumberFormatException e) {
-				 e.printStackTrace();
-	             log.error(e);
-	            return "500";
-			}
+            try {
+                model.put("question", getSearchService().getQuestionInfo(Long.valueOf(id)));
+            } catch (EnMeNoResultsFoundException | NumberFormatException e) {
+                 e.printStackTrace();
+                 log.error(e);
+                return "500";
+            }
             return "question/detail";
     }
 

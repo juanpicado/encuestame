@@ -5,4 +5,5 @@
 
 <c:if test="${development}">
 	<link rel="stylesheet"  href="<c:url value="/resources/dev/${detectedDevice ? 'mobile_' : ''}home.css" />" />
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/dev/map.css" />" />
 </c:if>

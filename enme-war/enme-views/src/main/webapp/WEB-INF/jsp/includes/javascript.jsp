@@ -1,11 +1,13 @@
 <%@ include file="/WEB-INF/jsp/includes/taglibs.jsp"%>
 <%@ include file="/WEB-INF/jsp/includes/decorators/dojo-config.jsp"%>
-
+<!--
+ Maps must defined before dojo file
+-->
+<script src="<%=request.getContextPath()%>/resources/js/maps.js"></script>
 
 <script src="<%=request.getContextPath()%>/resources/js/commons.js"></script>
 <script  src="<%=request.getContextPath()%>/resources/js/dojo/dojo.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/me/run.js"></script>
-<%--<script src="<%=request.getContextPath()%>/resources/js/enme.chart.js"></script>--%>
 
 <script>
 require([
